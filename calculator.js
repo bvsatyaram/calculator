@@ -121,6 +121,28 @@ var Calculator = {
   }
 };
 
+handleHotKeys = function() {
+  $(document).bind('keydown', '0', function() { $('#key_0').click(); });
+  $(document).bind('keydown', '1', function() { $('#key_1').click(); });
+  $(document).bind('keydown', '2', function() { $('#key_2').click(); });
+  $(document).bind('keydown', '3', function() { $('#key_3').click(); });
+  $(document).bind('keydown', '4', function() { $('#key_4').click(); });
+  $(document).bind('keydown', '5', function() { $('#key_5').click(); });
+  $(document).bind('keydown', '6', function() { $('#key_6').click(); });
+  $(document).bind('keydown', '7', function() { $('#key_7').click(); });
+  $(document).bind('keydown', '8', function() { $('#key_8').click(); });
+  $(document).bind('keydown', '9', function() { $('#key_9').click(); });
+  $(document).bind('keydown', '.', function() { $('#dot').click(); });
+  $(document).bind('keydown', '+', function() { $('#operation_plus').click(); });
+  $(document).bind('keydown', 'Shift+=', function() { $('#operation_plus').click(); });
+  $(document).bind('keydown', '-', function() { $('#operation_minus').click(); });
+  $(document).bind('keydown', '*', function() { $('#operation_multiply').click(); });
+  $(document).bind('keydown', '/', function() { $('#operation_division').click(); });
+  $(document).bind('keydown', 'backspace', function() { $('#delete').click(); });
+  $(document).bind('keydown', 'return', function() { $('#equals').click(); });
+};
+
 $( document ).ready(function() {
   Calculator.init();
+  handleHotKeys();
 });

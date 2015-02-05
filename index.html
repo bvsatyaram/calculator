@@ -7,6 +7,7 @@
   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="calculator.css">
   <script src="calculator.js"></script>
+  <script src="jquery.hotkeys.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -20,29 +21,29 @@
     <div class="row">
       <div id="reset" class="key double_key">AC</div><!--
       --><div id="delete" class="key">Del</div><!--
-      --><div class="key operation">/</div>
+      --><div id="operation_division" class="key operation">/</div>
     </div>
     <div class="row">
-         <div class="key digit">7</div><!--
-      --><div class="key digit">8</div><!--
-      --><div class="key digit">9</div><!--
-      --><div class="key operation">x</div>
+         <div id="key_7" class="key digit">7</div><!--
+      --><div id="key_8" class="key digit">8</div><!--
+      --><div id="key_9" class="key digit">9</div><!--
+      --><div id="operation_multiply" class="key operation">x</div>
     </div>
     <div class="row">
-         <div class="key digit">4</div><!--
-      --><div class="key digit">5</div><!--
-      --><div class="key digit">6</div><!--
-      --><div class="key operation">-</div>
+         <div id="key_4" class="key digit">4</div><!--
+      --><div id="key_5" class="key digit">5</div><!--
+      --><div id="key_6" class="key digit">6</div><!--
+      --><div id="operation_minus" class="key operation">-</div>
     </div>
     <div class="row">
-         <div class="key digit">1</div><!--
-      --><div class="key digit">2</div><!--
-      --><div class="key digit">3</div><!--
-      --><div class="key operation">+</div>
+         <div id="key_1" class="key digit">1</div><!--
+      --><div id="key_2" class="key digit">2</div><!--
+      --><div id="key_3" class="key digit">3</div><!--
+      --><div id="operation_plus" class="key operation">+</div>
     </div>
     <div class="row">
       <div id="dot" class="key">.</div><!--
-      --><div class="key digit">0</div><!--
+      --><div id="key_0" class="key digit">0</div><!--
       --><div id="equals" class="key double_key">=</div>
     </div>
   </div>
