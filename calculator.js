@@ -1,7 +1,5 @@
 var Calculator = {
   defaultText: '&nbsp;',
-  previousInput: null,
-  previousOperation: null,
   appendToInput: function(input, character) {
     if (input.html() == Calculator.defaultText) {
       input.html(character);
@@ -21,14 +19,12 @@ var Calculator = {
   },
   inputOperation: function(operation) {
     if ($('#main_input').html() == Calculator.defaultText) {
-      Calculator.previousOperation = operation;
       var previewString = $('#preview_input').html();
       $('#preview_input').html(previewString.substring(0, previewString.length - 1));
       Calculator.appendToPreviewInput(operation);
     } else {
       Calculator.performCalculation();
       Calculator.appendToPreviewInput(operation);
-      Calculator.previousOperation = operation;
       $('#main_input').html(Calculator.defaultText);
     }
   },
@@ -67,39 +63,20 @@ var Calculator = {
   },
   reset: function() {
     Calculator.setInputs(Calculator.defaultText);
-    Calculator.previousInput = 0;
-    Calculator.previousOperation = '+';
   },
   performCalculation: function() {
-    var previousVal = parseFloat(Calculator.previousInput);
-    var currentVal = parseFloat($('#main_input').html());
-    var result;
-    switch(Calculator.previousOperation) {
-    case '+':
-      result = previousVal + currentVal;
-      break;
-    case '-':
-      result = previousVal - currentVal;
-      break;
-    case 'x':
-      result = previousVal * currentVal;
-      break;
-    case '/':
-      result = previousVal / currentVal;
-      break;
-    }
-    Calculator.previousInput = result;
+    result = eval($('#preview_input').text());
     return result;
   },
   init: function() {
     Calculator.reset();
 
     $('.digit').click(function(){
-      Calculator.inputDigit($(this).text());    
+      Calculator.inputDigit($(this)[0].dataset.calculatorDigit);    
     });
 
     $('.operation').click(function(){
-      Calculator.inputOperation($(this).text());
+      Calculator.inputOperation($(this)[0].dataset.calculatorOperator);
     });
 
     $('#equals').click(function(){
